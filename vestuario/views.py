@@ -25,7 +25,8 @@ def contact(request):
         ime = request.POST['ime']
         mail = request.POST['mail']
         poruka = request.POST['poruka']
-        send_mail(ime,poruka,mail,['vestuariocompany@gmail.com'],)
+        print(ime,mail,poruka)
+        send_mail(ime,poruka,mail,['vestuariocompany@gmail.com'])
         return render(request, 'vestuario/kontakt.html', {'ime':ime})
     else:
         return render(request, 'vestuario/kontakt.html', {'title': 'Kontakt'})
