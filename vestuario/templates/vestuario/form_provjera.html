@@ -1,0 +1,17 @@
+{% for field in form %}
+
+    {% if field.label == 'Password' %}
+
+        <div class="form-group">
+        <label class="col-md-offset-4" style="font-size: 1.5rem"> {{ field.label_tag }}</label>
+            <input type="password" class="form-control" id="{{field.id_for_label}}" name=" {{field.name}}" placeholder="{{ field.label }}">
+        </div>
+
+    {% else %}
+        <div class="form-group">
+        <label class="col-md-offset-4" style="font-size: 1.5rem"> {{ field.label_tag }}</label>
+            <input type="text" class="form-control" id="{{field.id_for_label}}" name=" {{field.name}}" placeholder="{{ field.label }}">
+        </div>
+    {% endif %}
+
+{% endfor %}

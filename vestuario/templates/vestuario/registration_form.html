@@ -1,0 +1,34 @@
+{%  extends 'vestuario/base.html' %}
+{%  block body %}
+    <div class="coner">
+        <img src="/static/vestuario/images/slika40.jpg" alt="" style="width:100%;">
+        <div class="cdt"><br>
+  <text style="font-size: 3.5rem"> REGISTRACIJA</text> <br>
+<br>
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-md-4 col-md-offset-4">
+            <div class="panel panel-default ">
+                <div class = "panel-body">
+                    <h3 style="font-size: 1.5rem">Kreiraj novi račun!</h3>
+                    <form role="form" class = "form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include "vestuario/basic_form.html" %}
+                        <div class = "form-horizontal">
+                            <div class = "col-sm-offset-5">
+                                <br>
+                                <button type="submit" class="btn btn-success" >Registriraj se</button>
+                            </div>
+                              <div class="ro">
+                                  <h3 style="font-size: 1.5rem"><br>Imate korisnički račun! <a href="{% url 'login' %}" style="color: #996633;">Prijavite se</a></h3>
+                              </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+{%  endblock %}

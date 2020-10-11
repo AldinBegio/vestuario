@@ -1,0 +1,16 @@
+{%  extends 'vestuario/base.html' %}
+{% block body %}
+    <div class="coner" height="auto">
+  <img src="/static/vestuario/images/slika22.jpg" alt="" style="width:100%;" height="auto">
+<div class="ct"><font size="6px"><br>
+  <font size="20"><b><i> PRIJAVA</i></b></font> <br>
+<br>
+<form role="form" action="" method="POST" enctype="multipart/form-data">
+    {%  csrf_token %}
+    {% include 'vestuario/form_provjera.html' %}
+    <br><button type="submit" class="btn btn-success" >Prijavi se</button>
+	<br>Nemate korisnički račun? <a href="{%  url 'register' %}" style="color: #996633;">Registrirajte se</a>
+  </form>
+</font></div>
+  </div>
+ {% endblock %}

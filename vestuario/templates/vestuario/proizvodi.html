@@ -1,0 +1,19 @@
+{%  extends 'vestuario/base.html' %}
+{% block body %}
+    <style type="text/css">
+    .row1{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-5px;margin-left:40px}
+    </style>
+    <br>
+<p class="pe" align="center"> Najbolje ponude </p> <br>
+<br>
+    <table align="center">
+    <div class="row1" align="center">
+{%  for product in products %}
+<div class="gallery"><a target="_blank" href="{{product.imageURL}}"><img src="{{product.imageURL}}" alt="" width="600" height="400"></a>
+  <div class="desc">{{product.name}}<br><text style="font-size: 20px;">{{ product.price|floatformat:2 }} KM</text><br>
+      <button data-product={{ product.id }} data-action="add" class="fancy-btn update-cart" style="background-color: black">Dodaj u korpu</button></div></div>
+{% endfor %}
+</div>
+    </table>
+<br>
+{%  endblock %}

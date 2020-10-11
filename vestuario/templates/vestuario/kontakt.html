@@ -1,0 +1,38 @@
+{%  extends 'vestuario/base.html' %}
+{%  block body %}
+    <div class="coner">
+  <img src="/static/vestuario/images/slika12.jpeg" alt="" style="width:100%;">
+  <div class="centered">
+  <text style="font-size: 3rem">Kontaktirajte nas</text>
+<form action="{% url 'kontakt' %}" method="post">
+    {% csrf_token %}
+  Ime:<br>
+  <input type="text" name="ime" placeholder="*Obavezno"><br>
+  E-mail adresa:<br>
+  <input type="text" name="mail" placeholder="*Obavezno"><br>
+  Poruka:<br>
+  <textarea name="poruka" rows="15" cols="50"></textarea><br><br>
+  <input type="submit" value="POŠALJI" class="btn">
+  </form><br>
+      {% if ime %}
+    <div>
+  <div>
+        <div href="#" style="color: #cc9966">Zahvaljujemo Vam se {{ ime }}</div>
+      </div>
+        {% else %}
+<div class>
+  <div>
+        <div href="#"  style="color: #cc9966">Pišite nam Vaše dojmove</div>
+      </div>
+    {% endif %}
+</div>
+</div>
+  </div>
+    </div>
+    <table width="100%" align="center">
+    <tr>
+      <td width="80%" align="center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1415.1780460774105!2d15.86860564220768!3d44.81430974302333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4761406bdbfd4ff9%3A0x7282913ee8a90b7b!2sBosanska%2015%2C%20Biha%C4%87%2077000!5e0!3m2!1shr!2sba!4v1597686008648!5m2!1shr!2sba" width="1500" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+     </td>
+</tr></table>
+{% endblock %}

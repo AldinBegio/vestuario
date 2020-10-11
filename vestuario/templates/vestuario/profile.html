@@ -1,0 +1,27 @@
+{% extends "vestuario/base.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+    <div style="background-color: black;" align="left" xmlns="http://www.w3.org/1999/html">
+      <div align="center">
+          <div align="left">
+              <h2>Dobrodošao</h2>
+          <h2>{{ user.username }}</h2>
+        </div>
+        <img src="{{ user.profile.image.url }}">
+      </div>
+        <font style="color: #cc9966;"
+      {% csrf_token %}
+   <form  style="margin-left: 35rem; width: 30%;" role="form" action="" method="post" enctype="multipart/form-data">
+    Korisnik
+  <hr style="border: 1px solid #E0CCDE;"><br>
+    {% csrf_token %}
+    {{ u_form|crispy }}<br>
+    Informacije o korisniku
+  <hr style="border: 1px solid #E0CCDE;"><br>
+    {{ p_form|crispy }}<br>
+
+  <button type="submit" class="btn">IZMIJENI</button>
+   </form>
+    </font>
+    </div>
+{% endblock body %}
